@@ -1,0 +1,151 @@
+[settings]
+primary_data_repo = "mklink"
+backup_dir = "app-data/link-backups"
+log_dir = "app-data/logs"
+
+[[data_repos]]
+id = "primary"
+label = "Primary Data Repo"
+path = 'D:\A\resticprofile\thirdparty_configs\mklink'
+enabled = true
+
+[[backup_roots]]
+id = "backup-or-settings"
+label = "backup-or-settings"
+path = "backup-or-settings"
+enabled = true
+
+[[mapping_roots]]
+id = "user-home"
+label = "User profile"
+data_repo_id = "primary"
+source = "me"
+target = "%USERPROFILE%"
+mode = "children"
+enabled = true
+ignore = [
+    "test-1-no-exist",
+    "test2-no-exist",
+]
+
+[[mapping_roots]]
+id = "appdata-local"
+label = "AppData Local"
+data_repo_id = "primary"
+source = "AppData_Local"
+target = "%LOCALAPPDATA%"
+mode = "children"
+enabled = true
+ignore = [
+    "test-1-no-exist",
+    "test2-no-exist",
+]
+
+[[mapping_roots]]
+id = "appdata-roaming"
+label = "AppData Roaming"
+data_repo_id = "primary"
+source = "Roaming"
+target = "%APPDATA%"
+mode = "children"
+enabled = true
+ignore = [
+    "Wox",
+    "Anki2",
+]
+
+[[mapping_roots]]
+id = "roaming-microsoft"
+label = "Roaming Microsoft"
+data_repo_id = "primary"
+source = "Roaming-Microsoft/Microsoft"
+target = "%APPDATA%/Microsoft"
+mode = "children"
+enabled = true
+ignore = []
+
+[[mapping_roots]]
+id = "my-ai-skills"
+label = "my ai skills"
+data_repo_id = "virtual-independent-mapping-roots"
+source = 'E:\GitHub\scil\ai-skills\skills\'
+target = 'C:\Users\i\.agents\skills\'
+mode = "children"
+enabled = true
+ignore = []
+
+[[free_links]]
+id = "run-folder"
+label = "Run folder"
+source = "Run"
+target = "D:/a/Run"
+kind = "directory"
+enabled = true
+
+[[free_links]]
+id = "external-dwhelper"
+label = "dwhelper"
+group_id = "free-links-source-outside-data-repo"
+group_label = "自由链接(源不在 Data Repo)"
+source = "E:/i/Documents/dwhelper"
+target = "C:/Users/i/dwhelper"
+kind = "directory"
+enabled = true
+
+[[free_links]]
+id = "external-local-programs"
+label = "AppData Local Programs"
+group_id = "free-links-source-outside-data-repo"
+group_label = "自由链接(源不在 Data Repo)"
+source = "d:/Local/Programs"
+target = "C:/Users/i/AppData/Local/Programs"
+kind = "directory"
+enabled = true
+
+[[free_links]]
+id = "external-espanso"
+label = "espanso"
+group_id = "free-links-source-outside-data-repo"
+group_label = "自由链接(源不在 Data Repo)"
+source = "D:/A/Scoop/persist/Espanso/.espanso"
+target = "C:/Users/i/AppData/Roaming/espanso"
+kind = "directory"
+enabled = true
+
+[[free_links]]
+id = "external-anki2"
+label = "Anki2"
+group_id = "free-links-source-outside-data-repo"
+group_label = "自由链接(源不在 Data Repo)"
+source = "D:/A/Scoop/persist/anki/data"
+target = "C:/Users/i/AppData/Roaming/Anki2"
+kind = "directory"
+enabled = true
+
+[[free_links]]
+id = "external-gradle"
+label = ".gradle"
+group_id = "free-links-source-outside-data-repo"
+group_label = "自由链接(源不在 Data Repo)"
+source = "O:/Users/z/.gradle"
+target = "C:/Users/i/.gradle"
+kind = "directory"
+enabled = true
+
+[[free_links]]
+id = "external-android"
+label = ".android"
+group_id = "free-links-source-outside-data-repo"
+group_label = "自由链接(源不在 Data Repo)"
+source = "O:/Users/z/.android"
+target = "C:/Users/i/.android"
+kind = "directory"
+enabled = true
+
+[[free_links]]
+id = "link-two-scoop-espanso"
+label = "连接 scoop 中的两个espanso数据"
+source = 'D:\A\Scoop\persist\Espanso\.espanso\'
+target = 'D:\A\Scoop\persist\espanso-portable\.espanso\'
+kind = "directory"
+enabled = true
