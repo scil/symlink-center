@@ -1,6 +1,6 @@
 [package]
 name = "symlink_management_and_config_decoupling"
-version = "0.1.0"
+version = "0.1.1"
 description = "Desktop manager for backed-up settings and Windows symbolic links"
 authors = ["symlink-management-and-config-decoupling"]
 edition = "2021"
