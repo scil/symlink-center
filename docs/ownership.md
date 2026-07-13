@@ -3,7 +3,7 @@
 ## Facts Of Record
 
 - Source code: `src/`, `src-tauri/src/lib.rs`
-- Config schema and examples: `app-data/default/links.toml`, `app-data/auto-test/links.toml`
+- Config schema and examples: `data/default/links.toml`, `data/auto-test/links.toml`
 - Tests: Rust tests in `src-tauri/src/lib.rs`, frontend tests in `src/link-tree.test.ts`, auto-test runner in `tools/run-auto-test.ps1`
 - Product concepts: [docs/product.md#glossary](product.md#glossary), [docs/product.md#product-vision](product.md#product-vision)
 - Architecture and config decisions: [docs/architecture.md#architecture-overview](architecture.md#architecture-overview), [docs/architecture.md#data-model](architecture.md#data-model), [docs/architecture/security.md](architecture/security.md)

@@ -15,10 +15,10 @@ For problem-first entry points and past change recipes, see [Code Locator](code-
 - Product concepts: `docs/product.md#glossary`
 - Config/data model: `docs/architecture.md#data-model`
 - Safety behavior: `docs/architecture/security.md`
-- Main TOML config: active profile `links.toml`; debug default is `../app-data/default/links.toml`, release default is `app-data/default/links.toml` beside the exe
-- Auto-test profile config: `../app-data/auto-test/links.toml`
+- Main TOML config: active profile `links.toml`; debug default is `../data/default/links.toml`, release default is `data/default/links.toml` beside the exe
+- Auto-test profile config: `../data/auto-test/links.toml`
 - Auto-test runner: `../tools/run-auto-test.ps1`
-- Config root/profile pointer: debug default is `../app-data/config-location.toml`, release default is `app-data/config-location.toml` beside the exe
+- Config root/profile pointer: debug default is `../data/config-location.toml`, release default is `data/config-location.toml` beside the exe
 
 ## Naming Rules
 

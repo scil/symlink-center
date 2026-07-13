@@ -577,11 +577,11 @@ fn default_primary_data_repo() -> String {
 }
 
 fn default_backup_dir() -> String {
-    "app-data/link-backups".to_string()
+    "data/link-backups".to_string()
 }
 
 fn default_log_dir() -> String {
-    "app-data/logs".to_string()
+    "data/logs".to_string()
 }
 
 fn default_true() -> bool {
@@ -3456,12 +3456,12 @@ fn repo_root() -> PathBuf {
 fn default_config_dir() -> PathBuf {
     #[cfg(debug_assertions)]
     {
-        return repo_root().join("app-data");
+        return repo_root().join("data");
     }
 
     #[cfg(not(debug_assertions))]
     {
-        repo_root().join("app-data")
+        repo_root().join("data")
     }
 }
 
@@ -4359,7 +4359,7 @@ fn write_operation_log(
 }
 
 fn can_create_symlink_quiet() -> bool {
-    let root = repo_root().join("app-data").join("runtime-check");
+    let root = repo_root().join("data").join("runtime-check");
     let source = root.join("source");
     let link = root.join("link");
     let _ = remove_link_path(&link);
@@ -4404,11 +4404,11 @@ mod tests {
     }
 
     #[test]
-    fn debug_default_config_dir_is_app_root_app_data() {
+    fn debug_default_config_dir_is_app_root_data() {
         #[cfg(debug_assertions)]
         {
             let manifest_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-            let expected = manifest_dir.parent().unwrap().join("app-data");
+            let expected = manifest_dir.parent().unwrap().join("data");
             assert_eq!(default_config_dir(), expected);
         }
     }

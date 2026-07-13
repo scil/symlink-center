@@ -213,13 +213,13 @@ auto-test
 In debug mode, configuration is stored under:
 
 ```text
-app-data
+data
 ```
 
-In release builds, the default configuration root is `app-data` beside the executable:
+In release builds, the default configuration root is `data` beside the executable:
 
 ```text
-app-data
+data
 ```
 
 Each profile has its own:
@@ -231,7 +231,7 @@ links.toml
 So the default release profile file is:
 
 ```text
-app-data/default/links.toml
+data/default/links.toml
 ```
 
 Current TOML schema names include:
@@ -239,8 +239,8 @@ Current TOML schema names include:
 ```toml
 [settings]
 primary_data_repo = "mklink"
-backup_dir = "app-data/link-backups"
-log_dir = "app-data/logs"
+backup_dir = "data/link-backups"
+log_dir = "data/logs"
 
 [[data_repos]]
 id = "primary"
@@ -335,7 +335,7 @@ Isolated symlink auto-test profile:
 npm run test:auto-profile
 ```
 
-The auto-test profile creates temporary sources and targets under `app-data/auto-test-runtime`, verifies links, prints created/deleted paths, and cleans up links created during the test. If true symbolic links are unavailable, directory links may fall back to junctions and are reported as `junction-fallback`.
+The auto-test profile creates temporary sources and targets under `data/auto-test-runtime`, verifies links, prints created/deleted paths, and cleans up links created during the test. If true symbolic links are unavailable, directory links may fall back to junctions and are reported as `junction-fallback`.
 
 ## Packaging
 
@@ -361,8 +361,8 @@ Do not create release bundles unless you specifically need a packaged executable
 - `src/types.ts`: frontend types matching Rust command payloads.
 - `src/tauri-api.ts`: Tauri command wrappers.
 - `src-tauri/src/lib.rs`: config parsing, filesystem logic, scan/preview/apply actions, backup and logs.
-- `app-data/default/links.toml`: default profile config.
-- `app-data/auto-test/links.toml`: isolated test profile config.
+- `data/default/links.toml`: default profile config.
+- `data/auto-test/links.toml`: isolated test profile config.
 - `docs/ai.md#ai-context-map`: AI first-read map.
 - `docs/engineering/repo-map.md`: structural repo map.
 - `docs/engineering/code-locator.md`: problem-to-file recipes and focused checks.

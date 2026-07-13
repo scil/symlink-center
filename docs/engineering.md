@@ -33,19 +33,19 @@ http://127.0.0.1:1420
 During debug, the app base is the project root. The default config root is:
 
 ```text
-app-data
+data
 ```
 
 Debug default profile:
 
 ```text
-app-data/default/links.toml
+data/default/links.toml
 ```
 
 Debug config pointer:
 
 ```text
-app-data/config-location.toml
+data/config-location.toml
 ```
 
 Release runtime layout is documented in [Release](#release). Config schema and path rules are documented in [Config Model](architecture/config.md).
@@ -89,7 +89,7 @@ cargo test
 
 - Duplicate refresh logs: check `React.StrictMode`, initial refresh guard, and in-flight refresh guard.
 - Missing link row in tree: check `src/link-tree.ts` and duplicate terminal mappings.
-- Config path surprise: check `app-data/config-location.toml`, active profile, and `default_config_dir()`.
+- Config path surprise: check `data/config-location.toml`, active profile, and `default_config_dir()`.
 - PowerShell archive failure: inspect stderr and path quoting in `src-tauri/src/lib.rs`.
 
 ## Implementation Order For A Fresh Build
@@ -144,7 +144,7 @@ Legacy aliases are removed and should not be silently supported.
 
 ### Profile Migration
 
-Old `app-data/links.toml` is migrated to `app-data/default/links.toml`.
+Old `data/links.toml` is migrated to `data/default/links.toml`.
 
 ### Completed Naming Migration
 
@@ -192,19 +192,19 @@ npm run build
 The release app base is the executable directory. The default config root is:
 
 ```text
-exe_dir/app-data
+exe_dir/data
 ```
 
 The release executable reads the default profile from:
 
 ```text
-exe_dir/app-data/default/links.toml
+exe_dir/data/default/links.toml
 ```
 
 Release config pointer:
 
 ```text
-exe_dir/app-data/config-location.toml
+exe_dir/data/config-location.toml
 ```
 
 Config schema and path rules are documented in [Config Model](architecture/config.md).
@@ -246,7 +246,7 @@ During ordinary debug work, do not build release bundles or exe files unless req
 
 ### Auto-test Profile
 
-The auto-test profile is stored at `app-data/auto-test/links.toml` and must use only project-local temporary paths under `app-data/auto-test-runtime`.
+The auto-test profile is stored at `data/auto-test/links.toml` and must use only project-local temporary paths under `data/auto-test-runtime`.
 
 The auto-test runner creates temporary sources and targets, creates test links, verifies links, removes links created during the test, removes temporary runtime data unless explicitly kept, and prints created/deleted paths.
 

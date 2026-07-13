@@ -1,18 +1,18 @@
 [settings]
-primary_data_repo = "app-data/auto-test-runtime/repo"
-backup_dir = "app-data/auto-test-runtime/link-backups"
-log_dir = "app-data/auto-test-runtime/logs"
+primary_data_repo = "data/auto-test-runtime/repo"
+backup_dir = "data/auto-test-runtime/link-backups"
+log_dir = "data/auto-test-runtime/logs"
 
 [[data_repos]]
 id = "primary"
 label = "Auto Test Data Repo"
-path = "app-data/auto-test-runtime/repo"
+path = "data/auto-test-runtime/repo"
 enabled = true
 
 [[backup_roots]]
 id = "auto-test-runtime"
 label = "auto-test-runtime"
-path = "app-data/auto-test-runtime"
+path = "data/auto-test-runtime"
 enabled = true
 
 [[mapping_roots]]
@@ -20,7 +20,7 @@ id = "auto-test-children"
 label = "Auto Test Children"
 data_repo_id = "primary"
 source = "root-children"
-target = "app-data/auto-test-runtime/target/root-target"
+target = "data/auto-test-runtime/target/root-target"
 mode = "children"
 enabled = true
 ignore = ["ignored-child"]
@@ -30,7 +30,7 @@ id = "auto-test-direct"
 label = "Auto Test Direct"
 data_repo_id = "primary"
 source = "direct-source"
-target = "app-data/auto-test-runtime/target/direct-link"
+target = "data/auto-test-runtime/target/direct-link"
 mode = "direct"
 enabled = true
 ignore = []
@@ -40,6 +40,6 @@ id = "auto-test-free-link"
 label = "Auto Test Free Link"
 data_repo_id = "primary"
 source = "free-source"
-target = "app-data/auto-test-runtime/target/free-link"
+target = "data/auto-test-runtime/target/free-link"
 kind = "directory"
 enabled = true

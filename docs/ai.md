@@ -29,8 +29,8 @@ Use these as project-specific navigation anchors, not a required reading list. A
 - `docs/engineering/code-locator.md`: problem-to-file implementation entry points.
 - `src-tauri/src/lib.rs`: backend facts of record.
 - `src/App.tsx`: frontend facts of record.
-- `app-data/default/links.toml`: default profile example.
-- `app-data/auto-test/links.toml`: auto-test profile example.
+- `data/default/links.toml`: default profile example.
+- `data/auto-test/links.toml`: auto-test profile example.
 
 ### Document Routing
 
@@ -50,7 +50,7 @@ This document captures repeated mistakes and hidden traps. Keep canonical produc
 - Do not reintroduce legacy config aliases.
 - Do not use raw backslashes in double-quoted TOML Windows paths.
 - Do not treat `free_links` as a separate product concept from Free Links; it is the TOML table name for Free Links.
-- Release default config is `exe_dir/app-data/default/links.toml`.
+- Release default config is `exe_dir/data/default/links.toml`.
 
 ### Mapping Tree
 

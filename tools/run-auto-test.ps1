@@ -74,7 +74,7 @@ function Remove-TestSymlink([string]$Path, [System.Collections.Generic.List[stri
 }
 
 $projectRoot = Split-Path -Parent (Split-Path -Parent $PSCommandPath)
-$runtimeRoot = Join-Path $projectRoot "app-data\auto-test-runtime"
+$runtimeRoot = Join-Path $projectRoot "data\auto-test-runtime"
 $repoRoot = Join-Path $runtimeRoot "repo"
 $targetRoot = Join-Path $runtimeRoot "target"
 $created = [System.Collections.Generic.List[string]]::new()

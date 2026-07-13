@@ -25,7 +25,7 @@ After solving a recurring, subtle, or high-risk problem, update or add a recipe 
 
 1. Add the field to Rust config structs in `src-tauri/src/lib.rs`.
 2. Add frontend type fields in `src/types.ts` if exposed to UI.
-3. Update `app-data/default/links.toml` example/default profile config if needed.
+3. Update `data/default/links.toml` example/default profile config if needed.
 4. Update the owning docs, [Repo Map](repo-map.md) if structure changed, and this code locator when the fix creates a reusable recipe.
 5. Do not add legacy aliases unless explicitly requested.
 

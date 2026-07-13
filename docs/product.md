@@ -105,7 +105,7 @@ A Windows user who wants to keep application settings and data outside the syste
 - **Target**: The path where Windows applications expect files to appear. This is usually where the link is created.
 - **Source**: The real file or directory that stores data.
 - **Profile**: A named configuration folder containing `links.toml`. The default profile is `default`.
-- **Auto-test profile**: The `auto-test` profile used for isolated symlink tests under `app-data/auto-test-runtime`.
+- **Auto-test profile**: The `auto-test` profile used for isolated symlink tests under `data/auto-test-runtime`.
 - **Refresh**: Reload UI state according to the current TOML configuration.
 - **Scan**: Inspect Data Repo or Mapping Root filesystem changes and show proposed differences.
 

@@ -1,7 +1,7 @@
 [settings]
 primary_data_repo = "mklink"
-backup_dir = "app-data/link-backups"
-log_dir = "app-data/logs"
+backup_dir = "data/link-backups"
+log_dir = "data/logs"
 
 [[data_repos]]
 id = "primary"

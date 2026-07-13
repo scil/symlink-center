@@ -70,7 +70,7 @@ flowchart LR
   User["Windows user"] --> App["System Drive Slimming and Config Center"]
   App --> FS["Windows filesystem"]
   App --> Explorer["Windows Explorer"]
-  App --> Config["TOML profiles under app-data"]
+  App --> Config["TOML profiles under data"]
   App --> Logs["Persistent operation logs"]
 ```
 
@@ -141,7 +141,7 @@ Preview/apply logic lives in `src-tauri/src/lib.rs`. Risky operations should be 
 
 ### Config Schema
 
-Config structs live near the top of `src-tauri/src/lib.rs`. TOML profile examples live in `app-data/default/links.toml` and `app-data/auto-test/links.toml`.
+Config structs live near the top of `src-tauri/src/lib.rs`. TOML profile examples live in `data/default/links.toml` and `data/auto-test/links.toml`.
 
 ## Dynamic Flow: Refresh
 
@@ -201,8 +201,8 @@ Other docs should link to [docs/architecture/config.md](architecture/config.md) 
 - Backend model and config parsing: `src-tauri/src/lib.rs`.
 - Frontend model types: `src/types.ts`.
 - Tree grouping model: `src/link-tree.ts`.
-- Default profile data: `app-data/default/links.toml`.
-- Auto-test profile data: `app-data/auto-test/links.toml`.
+- Default profile data: `data/default/links.toml`.
+- Auto-test profile data: `data/auto-test/links.toml`.
 
 ## Deployment
 

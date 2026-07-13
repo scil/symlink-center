@@ -4,14 +4,14 @@ This document is the owning reference for configuration behavior. Other docs sho
 
 ## Config Roots
 
-The app uses an `app-data` directory under the app base directory for default configuration.
+The app uses an `data` directory under the app base directory for default configuration.
 
 - Debug app base: project root.
 - Release app base: executable directory.
-- Debug default config file: `app-data/default/links.toml`.
-- Release default config file: `app-data/default/links.toml` beside the exe.
+- Debug default config file: `data/default/links.toml`.
+- Release default config file: `data/default/links.toml` beside the exe.
 
-The bootstrap pointer is `app-data/config-location.toml`:
+The bootstrap pointer is `data/config-location.toml`:
 
 ```toml
 config_dir = "D:/Config/symlink-profiles"
@@ -25,7 +25,7 @@ When `config_dir` is set, profiles are loaded from that directory.
 Config supports multiple profiles. Profiles are directories that contain `links.toml`.
 
 ```text
-app-data/
+data/
   config-location.toml
   default/
     links.toml
@@ -65,8 +65,8 @@ Example:
 ```toml
 [settings]
 primary_data_repo = "mklink"
-backup_dir = "app-data/link-backups"
-log_dir = "app-data/logs"
+backup_dir = "data/link-backups"
+log_dir = "data/logs"
 
 [[data_repos]]
 id = "primary"
@@ -191,7 +191,7 @@ Do not use or reintroduce these legacy names:
 
 ## Migration Rules
 
-- If legacy `app-data/links.toml` exists, migrate it to `app-data/default/links.toml`.
+- If legacy `data/links.toml` exists, migrate it to `data/default/links.toml`.
 - Do not silently support removed legacy schema aliases.
 - Config migrations must update examples and tests together.
 
@@ -200,5 +200,5 @@ Do not use or reintroduce these legacy names:
 - Config loading, path resolution, profile management: `src-tauri/src/lib.rs`.
 - Frontend config/profile types: `src/types.ts`.
 - Tauri command wrappers: `src/tauri-api.ts`.
-- Default profile: `app-data/default/links.toml`.
-- Auto-test profile: `app-data/auto-test/links.toml`.
+- Default profile: `data/default/links.toml`.
+- Auto-test profile: `data/auto-test/links.toml`.

@@ -182,7 +182,7 @@ const removeLinkOptions: Array<{ value: RemoveLinkStrategy; label: string }> = [
   { value: "copy-source", label: "复制源内容到目标" },
 ];
 
-const targetConflictHint = "备份会写入 app-data/link-backups；目录会压缩为 zip。";
+const targetConflictHint = "备份会写入 data/link-backups；目录会压缩为 zip。";
 const removeLinkHint = "恢复备份会查找该目标最近一次备份；复制源会保留源目录不变。";
 
 const initialNewLink: NewLinkInput = {
@@ -377,7 +377,7 @@ export default function App() {
       addActivity(groupId, "running", "读取环境信息", "管理员权限、软链接权限、仓库路径");
       addActivity(groupId, "running", "扫描软链接映射状态", "读取配置并检查源/目标文件系统状态");
       addActivity(groupId, "running", "扫描备份根目录", "读取已配置备份根并生成树形条目");
-      addActivity(groupId, "running", "读取持久操作日志列表", "读取 app-data/logs");
+      addActivity(groupId, "running", "读取持久操作日志列表", "读取 data/logs");
       addActivity(groupId, "running", "读取应用配置", "Data Repo、备份根、日志目录");
 
       const [envInfo, linkRows, backupRows, logRows, settings] = await Promise.all([
@@ -2100,7 +2100,7 @@ function parentPathForDisplay(path: string) {
 }
 
 function defaultExportPath(configPath?: string | null) {
-  const base = configPath ? parentPathForDisplay(configPath) : "app-data";
+  const base = configPath ? parentPathForDisplay(configPath) : "data";
   return `${base}\\exported-mklink.md`;
 }
 

@@ -381,11 +381,11 @@ Logs should include:
 
 Keep an `auto-test` profile:
 
-- `app-data/auto-test/links.toml`
+- `data/auto-test/links.toml`
 
 The auto-test profile must use only project-local temp paths:
 
-- `app-data/auto-test-runtime`
+- `data/auto-test-runtime`
 
 Provide an automated test runner:
 
