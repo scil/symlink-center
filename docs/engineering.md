@@ -158,6 +158,27 @@ Old `custom_links` naming was removed from code, docs, and profile TOML. Use `fr
 npm run tauri build
 ```
 
+### Automated GitHub Release
+
+`.github/workflows/release.yml` builds the Windows NSIS installer and publishes it to GitHub Releases when a `v*` tag is pushed. The tag must equal `v` plus the version in `src-tauri/tauri.conf.json`.
+
+Before releasing, keep these version fields aligned:
+
+- `package.json` `version`
+- `src-tauri/Cargo.toml` `package.version`
+- `src-tauri/tauri.conf.json` `version`
+
+Create and push a release tag only after the release commit is on `main`:
+
+```powershell
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+The workflow uses GitHub's per-run `GITHUB_TOKEN` with `contents: write`; no repository secret is required. A successful run creates a non-draft GitHub Release with generated release notes and the Windows installer attached. If repository-level Actions settings override workflow permissions, allow GitHub Actions read/write access under repository settings.
+
+The Windows package is currently unsigned. Windows may therefore show a reputation warning until code signing is configured.
+
 ### Debug Rule
 
 During normal UI/debug work, do not build release bundles unless explicitly requested. Use:
